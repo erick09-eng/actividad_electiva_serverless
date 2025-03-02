@@ -1,0 +1,31 @@
+service: aws-Python-http-api-Project
+frameworkVersion: '3'
+
+plugins:
+  - serverless-offline
+
+
+provider:
+  name: aws
+  runtime: python3.9
+
+functions:
+  nombre_estudiante:
+    handler: handler.nombre_E
+    events:
+      - http:
+          path: /nombre_estudiante
+          method: GET
+  codigo_estudiante:
+    handler: handler.codigo_E
+    events:
+      - http:
+          path: /codigo_estudiante
+          method: GET
+  correo_estudiante:
+    handler: handler.correo_E
+    events:
+      - http:
+          path: /correo_estudiante
+          method: GET
+    
